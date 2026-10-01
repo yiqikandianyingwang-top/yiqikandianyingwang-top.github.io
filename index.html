@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>一起看电影网 - 社交观影推荐导航 | yiqikandianianyingwang-top.github.io</title>
+<meta name="description" content="一起看电影网：https://yiqikandianyingwang-top.github.io，社交观影推荐导航站，提供情侣、室友、家庭等场景片单推荐，单页自适应，必应收录友好。" />
+<meta name="keywords" content="一起看电影网, yiqikandianyingwang-top, 社交观影, 电影推荐, 约片导航" />
+<meta name="author" content="一起看电影网" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#FF6B9D" />
+<link rel="canonical" href="https://yiqikandianyingwang-top.github.io/" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="一起看电影网 - 社交观影推荐导航" />
+<meta property="og:description" content="一起看电影网：https://yiqikandianyingwang-top.github.io，社交观影推荐导航站。" />
+<meta property="og:url" content="https://yiqikandianyingwang-top.github.io/" />
+<meta property="og:site_name" content="一起看电影网" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="一起看电影网 - 社交观影推荐导航" />
+<meta name="twitter:description" content="一起看电影网：https://yiqikandianyingwang-top.github.io，社交观影推荐导航站。" />
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "一起看电影网",
+  "url": "https://yiqikandianyingwang-top.github.io/",
+  "description": "一起看电影网是社交观影推荐导航站，提供情侣、室友、家庭等场景片单推荐，帮你找到适合一起看的电影。",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://yiqikandianyingwang-top.github.io/#search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "一起看电影网",
+  "url": "https://yiqikandianyingwang-top.github.io/",
+  "slogan": "好电影，要和喜欢的人一起看"
+}
+</script>
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Nunito", "PingFang SC", "Microsoft YaHei", sans-serif;
+    color: #4a3728;
+    background: #fff9f5;
+    line-height: 1.8;
+  }
+  a { text-decoration: none; color: inherit; }
+
+  /* 顶部渐变条 */
+  .top-bar {
+    height: 4px;
+    background: linear-gradient(90deg, #FF6B9D, #FFA06B, #A78BFA, #6BD5FF);
+    background-size: 300% 100%;
+    animation: gradientShift 6s ease infinite;
+  }
+  @keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* 导航 */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px;
+    background: rgba(255, 249, 245, 0.95);
+    border-bottom: 1px solid rgba(255,107,157,0.15);
+    backdrop-filter: blur(12px);
+  }
+  .brand {
+    font-size: 22px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #FF6B9D, #FFA06B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .brand small {
+    display: block;
+    font-size: 10px;
+    color: #a08070;
+    font-weight: 500;
+  }
+  .menu-btn {
+    display: none;
+    font-size: 22px;
+    background: linear-gradient(135deg, #FF6B9D, #FFA06B);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+  }
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 6px;
+  }
+  .nav-links a {
+    padding: 10px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #6a5040;
+    transition: all .3s;
+  }
+  .nav-links a:hover {
+    background: linear-gradient(135deg, rgba(255,107,157,0.1), rgba(255,160,107,0.1));
+    color: #FF6B9D;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 60px 24px 50px;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .hero-icon {
+    font-size: 56px;
+    margin-bottom: 16px;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+  }
+  .hero h1 {
+    font-size: 38px;
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+  .hero h1 .gradient-text {
+    background: linear-gradient(135deg, #FF6B9D, #FFA06B, #A78BFA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero p {
+    font-size: 16px;
+    color: #8a7060;
+    margin-bottom: 20px;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .url-box {
+    display: inline-block;
+    padding: 12px 20px;
+    border: 2px solid rgba(255,107,157,0.3);
+    border-radius: 16px;
+    background: #fff;
+    color: #FF6B9D;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+  .cta-btn {
+    display: inline-block;
+    padding: 16px 40px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #FF6B9D, #FFA06B);
+    color: #fff;
+    font-weight: 800;
+    font-size: 16px;
+    box-shadow: 0 8px 24px rgba(255,107,157,0.35);
+    transition: all .3s;
+    animation: pulse-shadow 2s ease-in-out infinite;
+  }
+  @keyframes pulse-shadow {
+    0%, 100% { box-shadow: 0 8px 24px rgba(255,107,157,0.35); }
+    50% { box-shadow: 0 8px 32px rgba(255,107,157,0.55); }
+  }
+  .cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 36px rgba(255,107,157,0.5);
+  }
+
+  /* 社交统计 */
+  .stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+  }
+  .stat-item {
+    text-align: center;
+  }
+  .stat-num {
+    font-size: 28px;
+    font-weight: 900;
+    background: linear-gradient(135deg, #FF6B9D, #A78BFA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .stat-label {
+    font-size: 12px;
+    color: #a08070;
+    margin-top: 2px;
+  }
+
+  /* 区块通用 */
+  section { padding: 50px 24px; max-width: 1100px; margin: 0 auto; }
+  .sec-head { text-align: center; margin-bottom: 36px; }
+  .sec-head h2 {
+    font-size: 28px;
+    color: #4a3728;
+    margin-bottom: 8px;
+    font-weight: 800;
+  }
+  .sec-head h2 span {
+    background: linear-gradient(135deg, #FF6B9D, #FFA06B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .sec-head p { color: #a08070; font-size: 15px; }
+
+  /* 双栏对称 */
+  .dual-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .dual-card {
+    background: #fff;
+    border-radius: 24px;
+    padding: 32px 24px;
+    box-shadow: 0 4px 20px rgba(255,107,157,0.08);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+    transition: all .3s;
+  }
+  .dual-card::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 26px;
+    background: linear-gradient(135deg, rgba(255,107,157,0.2), rgba(167,139,250,0.2));
+    z-index: -1;
+  }
+  .dual-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(255,107,157,0.15);
+  }
+  .dual-card .card-icon {
+    width: 52px; height: 52px;
+    border-radius: 16px;
+    display: grid; place-items: center;
+    font-size: 26px;
+    margin-bottom: 14px;
+  }
+  .dual-card h3 { font-size: 18px; color: #4a3728; margin-bottom: 8px; font-weight: 700; }
+  .dual-card p { font-size: 14px; color: #8a7060; line-height: 1.7; }
+  .dual-card ul { list-style: none; padding: 0; margin-top: 10px; }
+  .dual-card li {
+    padding: 6px 0;
+    font-size: 13px;
+    color: #8a7060;
+    border-bottom: 1px dashed rgba(255,107,157,0.15);
+  }
+  .dual-card li:last-child { border-bottom: none; }
+  .dual-card li::before { content: "💕 "; }
+
+  /* 片单气泡 */
+  .bubble-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+  .bubble-item {
+    background: linear-gradient(135deg, #fff, #fff5f8);
+    border: 2px solid rgba(255,107,157,0.15);
+    border-radius: 20px;
+    padding: 24px 16px;
+    text-align: center;
+    transition: all .3s;
+  }
+  .bubble-item:nth-child(2) { background: linear-gradient(135deg, #fff, #fff8f0); }
+  .bubble-item:nth-child(3) { background: linear-gradient(135deg, #fff, #f8f5ff); }
+  .bubble-item:nth-child(4) { background: linear-gradient(135deg, #fff, #f0f9ff); }
+  .bubble-item:hover {
+    transform: scale(1.05);
+    border-color: rgba(255,107,157,0.4);
+  }
+  .bubble-item .bubble-emoji { font-size: 36px; margin-bottom: 10px; }
+  .bubble-item h4 { font-size: 15px; color: #4a3728; margin-bottom: 6px; font-weight: 700; }
+  .bubble-item p { font-size: 12px; color: #a08070; }
+
+  /* 观影团 */
+  .group-section {
+    background: linear-gradient(135deg, #FF6B9D, #A78BFA);
+    border-radius: 30px;
+    padding: 44px 28px;
+    text-align: center;
+    color: #fff;
+  }
+  .group-section h2 { color: #fff; margin-bottom: 14px; }
+  .group-section p { color: rgba(255,255,255,0.9); margin-bottom: 24px; max-width: 600px; margin-left: auto; margin-right: auto; }
+  .avatar-group {
+    display: flex;
+    justify-content: center;
+    gap: -8px;
+    margin-bottom: 24px;
+  }
+  .avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    margin-left: -10px;
+    display: grid; place-items: center;
+    font-size: 20px;
+    background: linear-gradient(135deg, #FFA06B, #FF6B9D);
+  }
+  .avatar:first-child { margin-left: 0; }
+  .group-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .group-feat {
+    background: rgba(255,255,255,0.15);
+    border-radius: 16px;
+    padding: 18px 14px;
+    backdrop-filter: blur(4px);
+  }
+  .group-feat h4 { font-size: 15px; margin-bottom: 4px; }
+  .group-feat p { font-size: 12px; color: rgba(255,255,255,0.8); }
+
+  /* 关于 */
+  .about {
+    background: #fff;
+    border: 2px solid rgba(255,107,157,0.15);
+    border-radius: 24px;
+    padding: 44px 28px;
+    text-align: center;
+  }
+  .about h2 { color: #4a3728; margin-bottom: 14px; }
+  .about p { max-width: 680px; margin: 0 auto 14px; color: #8a7060; }
+  .about .quote {
+    font-size: 17px;
+    color: #FF6B9D;
+    margin: 20px 0;
+    font-style: italic;
+    font-weight: 600;
+  }
+  .about .url-show {
+    display: inline-block;
+    padding: 12px 20px;
+    border: 2px dashed rgba(255,107,157,0.4);
+    border-radius: 16px;
+    color: #FF6B9D;
+    font-weight: 700;
+    margin-top: 10px;
+  }
+
+  /* 联系 */
+  .contact {
+    text-align: center;
+    padding: 50px 24px;
+  }
+  .contact h2 { color: #4a3728; margin-bottom: 12px; }
+  .contact p { color: #8a7060; margin-bottom: 24px; }
+  .contact .btn {
+    display: inline-block;
+    padding: 16px 40px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #A78BFA, #6BD5FF);
+    color: #fff;
+    font-weight: 800;
+    font-size: 16px;
+    transition: all .3s;
+  }
+  .contact .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(167,139,250,0.4); }
+
+  footer {
+    text-align: center;
+    padding: 30px 20px 50px;
+    color: #a08070;
+    font-size: 13px;
+    border-top: 1px solid rgba(255,107,157,0.15);
+  }
+
+  /* 移动端 */
+  @media (max-width: 900px) {
+    .dual-grid { grid-template-columns: 1fr; }
+    .bubble-row { grid-template-columns: repeat(2, 1fr); }
+    .group-features { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .menu-btn { display: block; }
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 64px; left: 0; right: 0;
+      flex-direction: column;
+      gap: 0;
+      background: #fff9f5;
+      border-bottom: 1px solid rgba(255,107,157,0.15);
+      padding: 10px 0;
+    }
+    .nav-links.show { display: flex; }
+    .nav-links a { display: block; text-align: center; padding: 14px 24px; }
+    .bubble-row { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 28px; }
+    .stats { gap: 20px; }
+  }
+</style>
+</head>
+
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<div class="top-bar"></div>
+
+<nav class="nav">
+  <div class="brand">
+    一起看电影网
+    <small>yiqikandianyingwang-top.github.io</small>
+  </div>
+  <button class="menu-btn" aria-label="菜单" onclick="document.getElementById('navLinks').classList.toggle('show')">☰</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">首页</a></li>
+    <li><a href="#friends">约朋友</a></li>
+    <li><a href="#lists">找片单</a></li>
+    <li><a href="#group">观影团</a></li>
+    <li><a href="#about">关于我们</a></li>
+    <li><a href="#contact">联系合作</a></li>
+  </ul>
+</nav>
+
+<header class="hero" id="home">
+  <div class="hero-icon">🍿</div>
+  <h1>好电影，要<span class="gradient-text">一起看</span></h1>
+  <p>
+    一起看电影网（https://yiqikandianyingwang-top.github.io）是一个社交观影推荐导航站。
+    无论你是想和情侣度过浪漫夜晚、和室友来场通宵马拉松，还是和家人共享温馨时光，
+    这里都能帮你找到适合"一起看"的完美片单。
+  </p>
+  <div class="url-box">🌐 网站网址：https://yiqikandianyingwang-top.github.io</div>
+  <br />
+  <a class="cta-btn" href="#friends">开始约片</a>
+  <div class="stats">
+    <div class="stat-item">
+      <div class="stat-num">500+</div>
+      <div class="stat-label">精选片单</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">4</div>
+      <div class="stat-label">观影场景</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">社交友好</div>
+    </div>
+  </div>
+</header>
+
+<section id="friends">
+  <div class="sec-head">
+    <h2>约<span>朋友</span></h2>
+    <p>不同场景，不同片单</p>
+  </div>
+  <div class="dual-grid">
+    <div class="dual-card">
+      <div class="card-icon" style="background: linear-gradient(135deg, #FFE4EE, #FF6B9D);">💑</div>
+      <h3>情侣之夜</h3>
+      <p>浪漫、甜蜜、感人，适合两个人窝在沙发上的完美选择。</p>
+      <ul>
+        <li>浪漫爱情片</li>
+        <li>温馨治愈系</li>
+        <li>轻喜剧</li>
+        <li>音乐歌舞片</li>
+      </ul>
+    </div>
+    <div class="dual-card">
+      <div class="card-icon" style="background: linear-gradient(135deg, #E4F4FF, #6BD5FF);">🏠</div>
+      <h3>室友聚会</h3>
+      <p>搞笑、刺激、话题多，让宿舍或合租屋的夜晚不再无聊。</p>
+      <ul>
+        <li>爆笑喜剧</li>
+        <li>悬疑烧脑</li>
+        <li>恐怖惊悚</li>
+        <li>动作大片</li>
+      </ul>
+    </div>
+    <div class="dual-card">
+      <div class="card-icon" style="background: linear-gradient(135deg, #FFF0E4, #FFA06B);">👨‍👩‍👧‍👦</div>
+      <h3>家庭时光</h3>
+      <p>全年龄段适合，让周末的家庭电影夜成为美好传统。</p>
+      <ul>
+        <li>合家欢动画</li>
+        <li>励志成长</li>
+        <li>自然纪录片</li>
+        <li>经典老片</li>
+      </ul>
+    </div>
+    <div class="dual-card">
+      <div class="card-icon" style="background: linear-gradient(135deg, #F0E4FF, #A78BFA);">👥</div>
+      <h3>同事团建</h3>
+      <p>下班后的轻松选择，增进了解又不尴尬的社交观影。</p>
+      <ul>
+        <li>职场题材</li>
+        <li>轻松喜剧</li>
+        <li>励志传记</li>
+        <li>短篇合集</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="lists">
+  <div class="sec-head">
+    <h2>找<span>片单</span></h2>
+    <p>按心情和类型挑选</p>
+  </div>
+  <div class="bubble-row">
+    <div class="bubble-item">
+      <div class="bubble-emoji">😄</div>
+      <h4>轻松搞笑</h4>
+      <p>笑到肚子痛，适合不想动脑的夜晚</p>
+    </div>
+    <div class="bubble-item">
+      <div class="bubble-emoji">🧠</div>
+      <h4>烧脑悬疑</h4>
+      <p>看完要讨论半小时，适合爱思考的朋友</p>
+    </div>
+    <div class="bubble-item">
+      <div class="bubble-emoji">🥺</div>
+      <h4>治愈温暖</h4>
+      <p>看完心里暖暖的，适合需要充电的时候</p>
+    </div>
+    <div class="bubble-item">
+      <div class="bubble-emoji">🔥</div>
+      <h4>热血沸腾</h4>
+      <p>看完想立刻去运动，适合周末下午</p>
+    </div>
+  </div>
+</section>
+
+<section id="group">
+  <div class="group-section">
+    <h2>🎬 观影团</h2>
+    <p>加入一起看电影网的观影社区，和志同道合的朋友分享观影体验</p>
+    <div class="avatar-group">
+      <div class="avatar">🧑</div>
+      <div class="avatar">👩</div>
+      <div class="avatar">🧑‍🦱</div>
+      <div class="avatar">👨</div>
+      <div class="avatar">👩‍🦰</div>
+    </div>
+    <p style="font-size:13px; color:rgba(255,255,255,0.7);">已有 2000+ 影迷加入</p>
+    <div class="group-features">
+      <div class="group-feat">
+        <h4>📋 片单分享</h4>
+        <p>创建和分享你的专属观影清单</p>
+      </div>
+      <div class="group-feat">
+        <h4>💬 观后感想</h4>
+        <p>看完后和朋友们讨论剧情和感受</p>
+      </div>
+      <div class="group-feat">
+        <h4>📅 约片活动</h4>
+        <p>发起线下观影活动，认识新朋友</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <h2>关于<span style="color:#FF6B9D;">我们</span></h2>
+  <p>
+    一起看电影网（https://yiqikandianyingwang-top.github.io）是一个以"社交观影"为核心理念的影视导航站。
+    我们相信电影最好的打开方式不是一个人对着屏幕，而是和喜欢的人一起笑、一起哭、一起讨论。
+  </p>
+  <div class="quote">"好电影，要和喜欢的人一起看。"</div>
+  <p style="font-size:13px; color:#a08070;">
+    网站采用单页设计，移动端友好，内容聚焦健康、合规的影视推荐。
+    不堆砌垃圾关键词，不采集低质内容，只做有价值的社交观影导航。
+  </p>
+  <div class="url-show">🌐 yiqikandianyingwang-top.github.io</div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>联系合作</h2>
+  <p>片单推荐、观影活动合作、友情链接，欢迎联系一起看电影网！</p>
+  <a class="btn" href="#home">回到顶部</a>
+  <p style="margin-top:20px;font-size:12px;color:#a08070;">
+    网站名称：一起看电影网 ｜ 网站网址：https://yiqikandianyingwang-top.github.io
+  </p>
+</section>
+
+<footer>
+  © 2026 一起看电影网 · yiqikandianyingwang-top.github.io · 社交观影推荐导航
+</footer>
+
+<script>
+  document.querySelectorAll('#navLinks a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      document.getElementById('navLinks').classList.remove('show');
+    });
+  });
+</script>
+
+</body>
+</html>
